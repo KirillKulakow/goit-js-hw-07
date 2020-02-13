@@ -23,5 +23,6 @@ const images = [
   ];
 
 for (let obj of images) {
-    document.querySelector('#gallery').insertAdjacentHTML("afterbegin", `<li><img src="${obj.url}" alt="${obj.alt}"></img></li>`)
+  document.querySelector('#gallery').classList.add('gallery'),
+  document.querySelector('#gallery').insertAdjacentHTML("beforeend", `<li class="gallery__item--${images.indexOf(obj) + 1}"><img class="gallery__img" src="${obj.url}" alt="${obj.alt}"></img></li>`)
 }
