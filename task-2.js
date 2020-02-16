@@ -13,11 +13,13 @@ const ingredients = [
     'Приправы',
   ];
 
-    for (let ingredient of ingredients) {
-        let li = document.createElement('li');
-        li.innerHTML = ingredient;
-        document.querySelector('#ingredients').append(li)
-    }
-
+const ingredientList = document.querySelector('#ingredients');
+let ingredientsArr = [];
+for (let ingredient of ingredients) {
+    let li = document.createElement('li');
+    li.innerHTML = ingredient;
+    ingredientsArr.push(li)
+}
+ingredientList.append(...ingredientsArr)
 
 

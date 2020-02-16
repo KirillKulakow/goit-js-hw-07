@@ -22,7 +22,12 @@ const images = [
     },
   ];
 
-for (let obj of images) {
-  document.querySelector('#gallery').classList.add('gallery'),
-  document.querySelector('#gallery').insertAdjacentHTML("beforeend", `<li class="gallery__item--${images.indexOf(obj) + 1}"><img class="gallery__img" src="${obj.url}" alt="${obj.alt}"></img></li>`)
-}
+document.querySelector('#gallery').classList.add('gallery')
+
+let imgToAdd = images.reduce((total, item, index) => 
+total + (`<li class="gallery__item--${index + 1}"><img class="gallery__img" src="${item.url}" alt="${item.alt}"></img></li>`), [])
+document.querySelector('#gallery').insertAdjacentHTML("beforeend", imgToAdd)
+
+// for (let obj of images) {
+//   document.querySelector('#gallery').insertAdjacentHTML("beforeend", `<li class="gallery__item--${images.indexOf(obj) + 1}"><img class="gallery__img" src="${obj.url}" alt="${obj.alt}"></img></li>`)
+// }
