@@ -25,7 +25,11 @@ const images = [
 document.querySelector('#gallery').classList.add('gallery')
 
 let imgToAdd = images.reduce((total, item, index) => 
-total + (`<li class="gallery__item--${index + 1}"><img class="gallery__img" src="${item.url}" alt="${item.alt}"></img></li>`), [])
+total + (`
+<li class="gallery__item--${index + 1}">
+  <img class="gallery__img" src="${item.url}" alt="${item.alt}">
+  </img>
+</li>`), [])
 document.querySelector('#gallery').insertAdjacentHTML("beforeend", imgToAdd)
 
 // for (let obj of images) {

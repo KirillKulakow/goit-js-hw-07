@@ -14,12 +14,22 @@ const ingredients = [
   ];
 
 const ingredientList = document.querySelector('#ingredients');
-let ingredientsArr = [];
-for (let ingredient of ingredients) {
-    let li = document.createElement('li');
-    li.innerHTML = ingredient;
-    ingredientsArr.push(li)
-}
-ingredientList.append(...ingredientsArr)
+let ingredientsS = '';
+ingredients.forEach(function(item, inx, arr) {
+  let li = document.createElement('li')
+  li.innerText = item
+  ingredientList.append(li)
+})
+  
+
+
+
+
+// for (let ingredient of ingredients) {
+//     let li = document.createElement('li');
+//     li.innerHTML = ingredient;
+//     ingredientsArr.push(li)
+// }
+// ingredientList.append(...ingredientsArr)
 
 
