@@ -29,7 +29,7 @@ total + (`
 <li class="gallery__item--${index + 1}">
   <img class="gallery__img" src="${item.url}" alt="${item.alt}">
   </img>
-</li>`), [])
+</li>`), '')
 document.querySelector('#gallery').insertAdjacentHTML("beforeend", imgToAdd)
 
 // for (let obj of images) {
