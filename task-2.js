@@ -13,13 +13,17 @@ const ingredients = [
     'Приправы',
   ];
 
-
+const ingredientList = document.querySelector('#ingredients');
+let array = []
 ingredients.forEach(function(item, inx, arr) {
-  const ingredientList = document.querySelector('#ingredients');
   let li = document.createElement('li')
   li.insertAdjacentHTML('afterbegin', item)
-  ingredientList.insertAdjacentElement('beforeend', li)
+  array.push(li.outerHTML)
 })
+ingredientList.insertAdjacentHTML('beforeend', array.join(''))
+
+console.log(array);
+
   
 
 
