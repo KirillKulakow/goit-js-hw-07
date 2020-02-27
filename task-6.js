@@ -8,12 +8,13 @@ const input = document.querySelector('#validation-input')
 
 const validator = () => {
     input.classList.add('validation-input');
-    if (input.value.length == input.getAttribute('data-length')) {
+    input.classList.add('invalid');
+    if (input.value.length === Number(input.getAttribute('data-length'))) {
         input.classList.add('valid');
         input.classList.remove('invalid');
     }
-        input.classList.remove('valid');
-        input.classList.add('invalid');
 }
-
+console.log(input.value.length);
+console.log(Number(input.getAttribute('data-length')));
+console.log(input.value.length === Number(input.getAttribute('data-length')));
 input.addEventListener('blur', validator)
